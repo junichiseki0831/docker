@@ -11,6 +11,7 @@ class BoardsController < ApplicationController
 
   def create
     board = Board.create(board_params)
+    flash[:notice] = " 「#{board.title}」の掲示版を作成しました"
     redirect_to board
   end
 
