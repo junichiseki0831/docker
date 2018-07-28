@@ -5,4 +5,8 @@
   </div>
 </div>
 
+<% if flash[:notice] %>
+  <div class="alart alart-primary"><%= flash[:notice] %></div>
+<% end %>
+
 <%= render partial: 'board', object: @board %>
