@@ -11,8 +11,8 @@
 #
 
 class Board < ApplicationRecord
-  has_many :comments
-  has_many :board_tag_relations
+  has_many :comments, dependent: :delete_all
+  has_many :board_tag_relations, dependent: :delete_all
   has_many :tags, through: :board_tag_relations
 
   validates :name, presence: true, length: {maximum: 10} # nameは未記入では投稿できない、10文字以上は記入できない
